@@ -1,0 +1,36 @@
+package FileWriter;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Mein{
+	public static void main(String[] args) {
+
+		FileWriter writer = null;
+		
+		try {
+			 writer = new FileWriter("kaan.txt");
+			 
+			 writer.write("ISIM: " + "Alinur Kaan\n");
+			 writer.write("SOYISIM: " + "Baytan Erdogan");
+			 
+			 
+		} catch (IOException e) {
+			System.out.println("Dosya Açilirken IOException Olustu...");
+		}
+		finally {
+			if(writer != null) {
+				try {
+					writer.close();
+				} catch (IOException e) {
+					System.out.println("Dosya Kapatilirken Bir Hata Olustu...");				}
+			}
+			
+		}
+		
+		
+		
+		
+	}
+
+}
