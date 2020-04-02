@@ -1,0 +1,43 @@
+package FileWriter;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class Mein {
+
+	public static void main(String[] args) {
+
+		FileInputStream fix = null;
+		try {
+			fix = new FileInputStream("fix.txt");
+		//	System.out.println("Okunan Karakter: " + (char)fix.read());
+			
+			
+		//	fix.skip(4);
+		//	System.out.println("OKUNAN KARAKTER: " + (char)fix.read());
+			
+			int deger;
+			String a = "";
+		while ((deger = fix.read()) != -1) {
+			
+			a += (char) deger;
+			
+		}
+		System.out.println("Dosya Içerigi: " + a);
+			
+		} catch (FileNotFoundException e) {
+			System.out.println("Dosya Bulunamadi...");
+		} catch (IOException e) {
+			System.out.println("Dosya Okunurken Hata Olustu...");
+		} finally {
+			try {
+				if (fix != null) {
+					fix.close();
+				}
+			} catch (IOException e) {
+				System.out.println("Dosya Kapatilamadi..");
+			}
+		}
+	}
+}
