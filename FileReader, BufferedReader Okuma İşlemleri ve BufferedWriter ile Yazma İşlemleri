@@ -1,0 +1,35 @@
+			try(Scanner scanner = new Scanner (new FileReader("Log.txt"))){
+				
+				
+				while(scanner.hasNextLine()) {
+					
+					String ogrenci_bilgisi = scanner.nextLine();
+					String[] array = ogrenci_bilgisi.split(":");
+					
+					
+					System.out.println("Okunan Satir..." + scanner.nextLine());
+					
+					if(array[1].equals("1")) {
+						
+						System.out.println("Ogrenci Bilgisi " + ogrenci_bilgisi);
+						
+					}
+				}
+			
+				
+			} catch (FileNotFoundException e) {
+				System.out.println("Dosya Bulunamadi...");
+			} catch (IOException e) {
+				System.out.println("Dosya Açilirken Bir Hata Olustu...");
+			}
+      
+      /*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*/*
+      
+      		try(BufferedWriter writer = new BufferedWriter(new FileWriter("Log.txt"))){
+			
+			writer.write("Ali Ozan, insaat muhendisi.");
+			
+		} catch (IOException e) {
+			System.out.println("Dosya Açilirken Hata Olustu...");
+		}
+		
